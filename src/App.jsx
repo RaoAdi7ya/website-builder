@@ -1,26 +1,19 @@
-import React from 'react'
-import { Routes, Route } from 'react-router-dom'
-import { HomePage } from './pages/HomePage'
-import { AuthPage } from './pages/AuthPage'
-import { BuilderPage } from './pages/BuilderPage'
-import {PreviewPage} from './pages/PreviewPage'
-import { PublishPage } from './pages/PublishPage'
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+
+import { HomePage } from "./pages/HomePage.jsx";
+import { BuilderPage } from "./pages/BuilderPage.jsx";
+import { Layout } from "./pages/Layout.jsx";
 
 const App = () => {
   return (
     <Routes>
-      <Route element = {<Layout/>}>
+      <Route element={<Layout />}>
         <Route path="/" element={<HomePage />} />
-        <Route path="/login" element={<AuthPage mode="login" />} />
-        <Route path="/register" element={<AuthPage mode="register" />} />
-        <Route path="/builder" element={<BuilderPage />} />
-        <Route path="/preview" element={<PreviewPage />} />
-        <Route path="/publish" element={<PublishPage />} />
+        <Route path="/builder/:id" element={<BuilderPage />} />
       </Route>
     </Routes>
-  )
-}
+  );
+};
 
-export default App
-
-  
+export default App;

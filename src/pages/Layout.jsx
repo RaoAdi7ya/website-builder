@@ -1,7 +1,13 @@
-import React from 'react'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import { Navbar } from "../components/Navbar";
 
 export const Layout = () => {
   return (
-    <div>Layout</div>
-  )
-}
+    <div className="min-h-screen">
+      <Navbar />
+
+      <Outlet />
+    </div>
+  );
+};
